@@ -4,15 +4,17 @@ using UnityEngine;
 
 public abstract class SpaceShip : MonoBehaviour
 {
-    protected ShipMovementStat thrust = new ShipMovementStat();
-    protected ShipMovementStat maxSpeed = new ShipMovementStat();
-    protected ShipMovementStat rotation = new ShipMovementStat();
-    protected ShipMovementStat brake = new ShipMovementStat();
 
-    protected ShipCombatStat health = new ShipCombatStat();
-    protected ShipCombatStat shield = new ShipCombatStat();
-    protected ShipCombatStat heat = new ShipCombatStat();
 
+    protected StatCalculator thrust = new StatCalculator();
+    protected StatCalculator thrustHeat = new StatCalculator();
+    protected StatCalculator maxSpeed = new StatCalculator();
+    protected StatCalculator rotation = new StatCalculator();
+    protected StatCalculator brake = new StatCalculator();
+    protected StatCalculator brakeHeat = new StatCalculator();
+    protected PointBasedStat health = new PointBasedStat();
+    protected PointBasedStat shield = new PointBasedStat();
+    protected PointBasedStat heat = new PointBasedStat();
 
     protected Vector2 rotateToTarget;
 
@@ -35,13 +37,20 @@ public abstract class SpaceShip : MonoBehaviour
 
     protected void MoveShip()
     {
-        rb.AddRelativeForce(Vector2.up * thrust.EffectiveValue);
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed.EffectiveValue);
-
+        //Forward Thrust
+        rb.AddRelativeForce(Vector2.up * thrust.EffectiveStat);
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed.EffectiveStat);
+        //Rotation
         Quaternion q = Quaternion.AngleAxis((Mathf.Atan2(rotateToTarget.y - transform.position.y, rotateToTarget.x - transform.position.x) * Mathf.Rad2Deg) - 90, Vector3.forward);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, rotation.EffectiveStat * Time.deltaTime);
+        //Brake
+        rb.AddForce(-Vector2.ClampMagnitude(rb.velocity, brake.EffectiveStat));
+        //Heat
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, rotation.EffectiveValue * Time.deltaTime);
 
-        rb.AddForce(-Vector2.ClampMagnitude(rb.velocity, brake.EffectiveValue));
+
+        Debug.Log("Current Heat: " + heat.CurrentValue + "/ Max Heat: " + heat.MaxValue.EffectiveStat);
+
     }
+
 }

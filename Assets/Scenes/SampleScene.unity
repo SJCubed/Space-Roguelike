@@ -429,5 +429,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9045167212805961732, guid: 61683abc5f09cfd46ab4da0631492bd1,
         type: 3}
+    - target: {fileID: 1084677440284934508, guid: 301bbdbeef6038f409e0f7b048c7bb09,
+        type: 3}
+      propertyPath: initHeat
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084677440284934508, guid: 301bbdbeef6038f409e0f7b048c7bb09,
+        type: 3}
+      propertyPath: initThrustHeat
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084677440284934508, guid: 301bbdbeef6038f409e0f7b048c7bb09,
+        type: 3}
+      propertyPath: initBrakeHeat
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 301bbdbeef6038f409e0f7b048c7bb09, type: 3}

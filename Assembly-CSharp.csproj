@@ -61,9 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\ShipCombatStat.cs" />
-    <Compile Include="Assets\Scripts\ShipMovementStat.cs" />
+    <Compile Include="Assets\Scripts\PointBasedStat.cs" />
     <Compile Include="Assets\Scripts\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\StatCalculator.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Josh/Documents/Space Roguelike/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
