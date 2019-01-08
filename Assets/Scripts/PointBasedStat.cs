@@ -10,7 +10,7 @@ public class PointBasedStat
     private float currentValue;
     private float underflowValue;
     private float overflowValue;
-    private StatCalculator maxValue = new StatCalculator();
+    private StatCalculator maxValue;
 
     public StatCalculator MaxValue { get => maxValue; set => maxValue = value; }
 
@@ -86,10 +86,19 @@ public class PointBasedStat
         }
     }
 
-    public void InitializePointStat(float current_value, float max_value)
+
+
+    public PointBasedStat(float current_value, float max_value)
     {
-        maxValue.BaseStat = max_value;
+
+        maxValue = new StatCalculator(max_value);
         CurrentValue = current_value;
+
     }
 
 }
+
+
+
+
+

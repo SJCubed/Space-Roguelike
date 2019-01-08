@@ -102,6 +102,17 @@ public class StatCalculator
         CalculateEffectiveStat();
     }
 
+    //Constructor with just base value
+    public StatCalculator (float base_stat)
+    {
+        baseStat = base_stat;
+        baseAdditive = 0f;
+        baseMultiplier = 1f;
+        totalAdditive = 0f;
+        totalMultiplier = 1f;
+        CalculateEffectiveStat();
+    }
+
 
     //Default Constructor
     public StatCalculator()
