@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{2C9DA90F-E785-7C91-2EB5-7C70FBDBC643}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -61,13 +60,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\CameraScript.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PointBasedStat.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip.cs" />
-    <Compile Include="Assets\Scripts\StatCalculator.cs" />
+    <Compile Include="Assets\Scripts\Classes\FloatReference.cs" />
+    <Compile Include="Assets\Scripts\Classes\IntReference.cs" />
+    <Compile Include="Assets\Scripts\Classes\SkillSequence.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\GameEventListener.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\PlayerMovementInputController.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\ShipEngine.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\ShipRotation.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\SkillBar.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\SkillController.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\SkillSlot.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\SkillTooltip.cs" />
+    <Compile Include="Assets\Scripts\OldScripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\OldScripts\CameraScript.cs" />
+    <Compile Include="Assets\Scripts\OldScripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\OldScripts\Player.cs" />
+    <Compile Include="Assets\Scripts\OldScripts\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\ShipMovementStats.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Skill.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\SkillAction.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\SkillActions\SetTarget.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\FloatVariable.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\IntVariable.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\PointBasedStat.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\StatCalculator.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Variable\StringVariable.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Josh/Documents/Space Roguelike/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
